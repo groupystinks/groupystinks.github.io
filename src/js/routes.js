@@ -1,6 +1,4 @@
 var App = require('./App');
-var ThreadView = require('./components/ThreadView');
-var ProcessView = require('./components/ProcessView');
 var React = require('react');
 var Router = require('react-router');
 
