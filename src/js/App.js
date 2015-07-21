@@ -14,12 +14,7 @@ class App extends Component {
 
   render(): any {
     return (
-      <div style={styles.root}>
-        <div style={styles.white}>
-          HiHi
-        </div>
-        <SpaceTravel/>
-      </div>
+      <SpaceTravel/>
     );
   }
 }
