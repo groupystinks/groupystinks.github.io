@@ -11,10 +11,19 @@ var galaxyImg = require("../../images/galaxy.png");
 
 @PureRender
 class SpaceTravel extends Component {
+
   componentDidMount() {
-    AttractorsTrip()
+    this._events = {};
+    this._events = AttractorsTrip();
   }
 
+  componentWillUnmount() {
+    // remove
+    document.removeEventListener( 'mousemove', this._events.onDocumentMouseMove, false );
+    document.removeEventListener( 'touchstart', this._events.onDocumentTouchStart, false );
+    document.removeEventListener( 'touchmove', this._events.onDocumentTouchMove, false );
+    window.removeEventListener( 'resize', this._events.onWindowResize, false );
+  }
 
   render(): any {
     return null;

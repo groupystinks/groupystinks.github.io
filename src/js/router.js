@@ -1,28 +1,26 @@
-type Params = {[key: string]: string;};
-type Query = {[key: string]: string;};
 
 // Proxy calls to router to avoid circular dependencies
 // https://github.com/rackt/react-router/blob/master/docs/guides/flux.md#circular-dependencies-in-actions
-var router: any;
+var router;
 
 module.exports = {
   getCurrentPath(): string {
     return router.getCurrentPath();
   },
 
-  makePath(to: string, params?: Params, query?: Query): string {
+  makePath(to: string, params, query): string {
     return router.makePath(to, params, query);
   },
 
-  makeHref(to: string, params?: Params, query?: Query): string {
+  makeHref(to: string, params, query): string {
     return router.makeHref(to, params, query);
   },
 
-  transitionTo(to: string, params?: Params, query?: Query) {
+  transitionTo(to: string, params, query) {
     router.transitionTo(to, params, query);
   },
 
-  replaceWith(to: string, params?: Params, query?: Query) {
+  replaceWith(to: string, params, query) {
     router.replaceWith(to, params, query);
   },
 
@@ -40,5 +38,5 @@ var routes = require('./routes');
 
 router = Router.create({
   routes: routes,
-  // location: Router.HistoryLocation
+  location: Router.HistoryLocation
 });
