@@ -7,7 +7,12 @@
 var galaxyImg = require("../../images/galaxy.png");
 var THREE = require('three');
 
-// TODO: Mobile friendly
+/*/ TODO: 1. Mobile friendly
+*       2. Stop animate with no memory leak.
+*         a. updateOrbit
+*         b. http://stackoverflow.com/questions/12945092/memory-leak-with-three-js-and-many-shapes?rq=1
+*
+*/
 
 
 function AttractorsTripNamespace() {
@@ -191,6 +196,7 @@ function AttractorsTripNamespace() {
   // Hopalong Orbit Generator
   ///////////////////////////////////////////////
   function updateOrbit(){
+
     generateOrbit();
 
     for( i = 0; i < scene.children.length; i++ ) {

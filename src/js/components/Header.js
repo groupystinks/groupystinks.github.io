@@ -58,19 +58,20 @@ class NavItem extends Component {
 
 var styles  = {
   list: {
-    top: '5%',
-    left: '40%',
+    position: 'relative',
     display: 'flex',
-    position: 'absolute',
-    zIndex: '100',
+    width: '300px',
+    margin: '0 auto',
+    zIndex: 100,
     fontSize: '20px',
   },
 
   listItem: {
     link: {
+      flex: 1,
       color: Colors.whiteSmoke,
       display: 'block',
-      padding: '16px',
+      padding: '24px 16px',
       textDecoration: 'none',
       verticalAlign: 'bottom',
 
@@ -86,7 +87,7 @@ var styles  = {
     linkSelected: {
       color: Colors.oceanBlue.lighten(22),
       cursor: 'default',
-      padding: '16px',
+      padding: '24px 16px',
 
       ':hover': {
         color: Colors.tinyPink,

@@ -22,7 +22,7 @@ class SpaceTravel extends Component {
     document.removeEventListener( 'mousemove', this._events.onDocumentMouseMove, false );
     document.removeEventListener( 'touchstart', this._events.onDocumentTouchStart, false );
     document.removeEventListener( 'touchmove', this._events.onDocumentTouchMove, false );
-    window.removeEventListener( 'resize', this._events.onWindowResize, false );
+    // window.removeEventListener( 'resize', this._events.onWindowResize, false );
   }
 
   render(): any {

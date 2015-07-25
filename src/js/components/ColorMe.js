@@ -9,6 +9,7 @@ var Colors = {
   gray1: new Color('#eee'),
   gray2: new Color('#ccc'),
   gray3: new Color('#999'),
+  gray4: new Color('#ddd'),
   white: new Color('#fff'),
 };
 
