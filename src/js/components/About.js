@@ -1,6 +1,7 @@
-var {Component, PropsType} = require('react');
+var {Component, PropTypes} = require('react');
 var React = require('react/addons');
 var Colors = require('./ColorMe');
+var Hr = require('./Hr');
 var glassesBlack = require('../../images/rounded-black-128.png')
 var PureRender = require('./PureRender');
 var Radium = require('radium');
@@ -19,8 +20,8 @@ class About extends Component {
     ];
 
     var socials = [
-      {link: 'https://twitter.com/groupystinks', img: '', label: 'twitter'},
-      {link: 'https://github.com/groupystinks', img: '', label: 'github'},
+      {link: 'https://twitter.com/groupystinks', label: 'twitter'},
+      {link: 'https://github.com/groupystinks', label: 'github'},
     ]
 
     return (
@@ -47,10 +48,7 @@ class About extends Component {
           <section style={styles.profileContainer.lowerChild}>
             <article><p>我在年青時候也曾經做過許多夢，後來大半忘卻了，但自己也並不以為可惜。 所謂回憶者，雖說可以使人歡欣，有時也不免使人寂寞，使精神的絲縷還牽著己逝的寂寞的時光，又有什麼意味呢，而我偏苦於不能全忘卻，這不能全忘的一部分，到現在便成了《吶喊》的來由。 我有四年多，曾經​​常常，——幾乎是每天，出入於質鋪和藥店裡，年紀可是忘卻了，總之是藥店的櫃檯正和我一樣高，質舖的是比我高一倍，我從一倍高的櫃檯外送上衣服或首飾去，在侮蔑裡接了錢，再到一樣高的櫃檯上給我久病的父親去買藥。 回家之後，又須忙別的事了，因為開方的醫生是最有名的，以此所用的藥引也奇特：冬天的蘆根 ，經霜三年的甘蔗 ，蟋蟀要原對的，結子的平地木 ，……多不是容易辦到的東西。 然而我的父親終於日重一日的亡故了。</p></article>
           </section>
-
-          <section style={styles.hr}>
-            <span style={styles.hrAfter}>§</span>
-          </section>
+          <Hr/>
         </div>
         <div style={styles.projectContainer}>
           {projects.map(project =>
@@ -71,6 +69,12 @@ class About extends Component {
 @Radium
 @PureRender
 class ProjectItem extends Component {
+  static propTypes = {
+    label: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    image: PropTypes.string,
+  }
+
   render() {
     return (
       <section style={styles.projects.section}>
@@ -139,28 +143,9 @@ var styles = {
     },
   },
 
-  hr: {
-    flex: 1,
-    margin: 'auto',
-    width: '80%',
-    padding: '0',
-    border: 'none',
-    borderTop: 'medium double #333',
-    color: '#333',
-    textAlign: 'center',
-  },
-
-  hrAfter: {
-    display: 'inline-block',
-    position: 'relative',
-    top: '-0.7em',
-    fontSize: '1.5em',
-    padding: '0 0.25em',
-  },
-
   projectContainer: {
     display: 'flex',
-    justifyContent: 'space-around',
+    justifyContent: 'center',
     alignContent: 'center',
     flexFlow: 'row wrap',
   },

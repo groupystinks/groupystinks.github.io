@@ -1,5 +1,4 @@
 var _ = require('lodash');
-var asap = require('asap');
 var {Component, PropTypes} = require('react');
 var React = require('react/addons');
 

@@ -6,9 +6,6 @@
  */
 
 /*/ TODO: 1. Mobile friendly
-*         2. Stop animate with no memory leak.
-*         a. updateOrbit
-*         b. http://stackoverflow.com/questions/12945092/memory-leak-with-three-js-and-many-shapes?rq=1
 *
 */
 
