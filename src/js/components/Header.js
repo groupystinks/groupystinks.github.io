@@ -15,7 +15,7 @@ class Header extends Component {
   render() {
     var headers = ['Home', 'About', 'Writing'];
     return (
-      <header className='upperHead'>
+      <header>
         <nav>
           <ul style={styles.list}>
             {headers.map(item =>

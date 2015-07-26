@@ -89,7 +89,6 @@ class Novels extends Component {
 var styles = {
   root: {
     padding: '50px 0',
-    backgroundColor: Colors.gray4,
   },
 
   hrContainer: {
