@@ -4,7 +4,6 @@ var App = require('./components/App');
 var Root = require('./components/Root');
 var About = require('./components/About');
 var Writing = require('./components/Writing');
-var NotFound = require('./components/NotFound');
 
 
 var routes = (

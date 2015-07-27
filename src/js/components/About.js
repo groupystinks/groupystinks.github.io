@@ -2,9 +2,11 @@ var {Component, PropTypes} = require('react');
 var React = require('react/addons');
 var Colors = require('./ColorMe');
 var Hr = require('./Hr');
-var glassesBlack = require('../../images/rounded-black-128.png')
+var glassesBlackLarge = require('../../images/rounded-black-128.png');
+var glassesBlackSmall = require('../../images/rounded-black-64.png');
 var PureRender = require('./PureRender');
 var Radium = require('radium');
+var MobileDetect = require('mobile-detect');
 var {Link} = require('react-router');
 
 
@@ -12,6 +14,7 @@ var {Link} = require('react-router');
 @PureRender
 class About extends Component {
   render(): any {
+    var deviceDetect = new MobileDetect(window.navigator.userAgent);
     var projects = [
       {link: 'https://github.com/groupystinks/skrik-view', img: '', label: 'skrikView'},
       {link: 'https://github.com/groupystinks/text-rhythm', img: '', label: 'textRhythm'},
@@ -31,7 +34,9 @@ class About extends Component {
           <section style={styles.profileContainer.upperChild}>
             <h2 style={styles.profileContainer.name}>
               Lai
-              <img src={glassesBlack} style={styles.profileContainer.glasses}/>
+              {!deviceDetect.phone() ?
+                (<img src={glassesBlackLarge} style={styles.profileContainer.glasses}/>
+                ):(<img src={glassesBlackSmall} style={styles.profileContainer.glasses}/>)}
               <br/>
               Chia-Sheng
             </h2>
@@ -158,6 +163,7 @@ var styles = {
       width: '300px',
       height: '200px',
       zIndex: 100,
+      padding: '10px',
       marginTop: "10px",
       color: Colors.black,
       fontSize: '24px',
@@ -169,6 +175,8 @@ var styles = {
       color: Colors.black,
       textDecoration: 'none',
       width: "100%",
+      padding: '10px',
+      border: '1px solid ' + Colors.gray2,
       transition: 'border .2s ease-out, box-shadow .2s ease-out',
 
       ':hover': {
@@ -182,7 +190,7 @@ var styles = {
     },
 
     label: {
-
+      margin: 'auto',
     },
   },
 

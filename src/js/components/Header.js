@@ -75,10 +75,6 @@ var styles  = {
       textDecoration: 'none',
       verticalAlign: 'bottom',
 
-      ':hover': {
-        color: Colors.tinyPink,
-      },
-
       ':active': {
         padding: '18px 14px 14px 18px',
       },
@@ -89,8 +85,8 @@ var styles  = {
       cursor: 'default',
       padding: '24px 16px',
 
-      ':hover': {
-        color: Colors.tinyPink,
+      ':active': {
+        padding: '18px 14px 14px 18px',
       },
     },
   },

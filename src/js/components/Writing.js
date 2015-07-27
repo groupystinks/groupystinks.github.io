@@ -145,7 +145,7 @@ var styles = {
     },
 
     name: {
-
+      margin: 'auto',
     },
   },
 }

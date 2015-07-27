@@ -3,11 +3,13 @@ var React = require('react/addons');
 var Radium = require('radium');
 var $ = require('jquery');
 var Router = require('react-router');
+var MobileDetect = require('mobile-detect');
 
 var Colors = require('./ColorMe');
 var SpaceTravel = require('./SpaceTravel');
 var PureRender = require('./PureRender');
-var glassesWhite = require('../../images/rounded-white.png')
+var glassesWhite = require('../../images/rounded-white.png');
+var glassesBlack = require('../../images/rounded-black-64.png');
 
 var Link = Router.Link;
 
@@ -21,11 +23,19 @@ class Index extends Component {
   }
 
   render(): any {
+    var deviceDetect = new MobileDetect(window.navigator.userAgent);
     return (
       <div>
         <Link to="about">
-          <span key='span' style={styles.name}>
+          <span key='span' style={[styles.name, deviceDetect.mobile() && styles.nameMobile]}>
             L
+            {deviceDetect.mobile() ? (
+            <span style={styles.invisibleName}>
+              <span>ai
+                <img src={glassesBlack} style={styles.image}/>
+              <br/></span>
+              <span>Chia-Sheng</span>
+            </span>): null}
             {Radium.getState(this.state, 'span', ':hover') ? (
               <span style={styles.invisibleName}>
                 <span>ai
@@ -36,7 +46,7 @@ class Index extends Component {
             ): null}
           </span>
         </Link>
-        <SpaceTravel ref='space'/>
+        {!deviceDetect.mobile() ? <SpaceTravel ref='space'/> : null}
       </div>
     );
   }
@@ -60,6 +70,10 @@ var styles = {
     ':hover': {
       cursor: 'pointer',
     }
+  },
+
+  nameMobile: {
+    color: Colors.black,
   },
 
   invisibleName: {

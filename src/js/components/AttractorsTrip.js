@@ -2,7 +2,9 @@
  * AUTHOR: Iacopo Sassarini
  * URL: http://www.chromeexperiments.com/detail/webgl-attractors-trip/
  *
- * replaced Hopalong Orbit Fractal with Three Ply Orbit Fractal
+ */
+ /* Adopted from webgl-attractors-trip and
+ * replace Hopalong Orbit Fractal with Three Ply Orbit Fractal
  */
 
 /*/ TODO: 1. Mobile friendly
