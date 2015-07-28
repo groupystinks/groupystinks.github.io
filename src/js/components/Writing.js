@@ -10,17 +10,6 @@ var Radium = require('radium');
 var RSVP = require('rsvp');
 var asap = require('asap');
 
-// Array of:
-// download_url: null
-// git_url: "https://api.github.com/repos/groupystinks/skrik-view/git/trees/c0688ffeef570d258a57c0af4121cd005cbcaefd"
-// html_url: "https://github.com/groupystinks/skrik-view/tree/master/data/A%20Portrait%20of%20the%20Artist%20as%20a%20Young%20Man"
-// name: "A Portrait of the Artist as a Young Man"
-// path: "data/A Portrait of the Artist as a Young Man"
-// sha: "c0688ffeef570d258a57c0af4121cd005cbcaefd"
-// size: 0
-// type: "dir"
-// url: "https://api.github.com
-
 
 @Radium
 @PureRender
@@ -70,13 +59,13 @@ class Writing extends Component {
 @PureRender
 class Novels extends Component {
   render() {
-    var linkPrefix = 'http://localhost:8686/#/thread/';
+    var linkBaseURL = 'http://groupystinks.github.io/skrik-view/#/thread/';
     return (
       <section style={styles.novels.section} >
         <a
           target="_blank"
           style={styles.novels.link}
-          href={encodeURI(linkPrefix + this.props.name)}
+          href={encodeURI(linkBaseURL + this.props.name)}
         >
           <div style={styles.novels.name}>{this.props.name}</div>
           <div></div>

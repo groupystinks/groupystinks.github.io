@@ -18,9 +18,7 @@ class About extends Component {
     var projects = [
       {link: 'https://github.com/groupystinks/skrik-view', img: '', label: 'skrikView'},
       {link: 'https://github.com/groupystinks/text-rhythm', img: '', label: 'textRhythm'},
-      {link: 'https://github.com/groupystinks/text-rhythm', img: '', label: 'textAhythm'},
-      {link: 'https://github.com/groupystinks/text-rhythm', img: '', label: 'textBhythm'},
-      {link: 'https://github.com/groupystinks/text-rhythm', img: '', label: 'textChythm'},
+      {link: 'https://github.com/groupystinks/groupystinks.github.io', img: '', label: 'internetOfMine'},
     ];
 
     var socials = [
